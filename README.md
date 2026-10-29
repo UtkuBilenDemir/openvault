@@ -1,3 +1,6 @@
+> [!CAUTION]
+> **This project has been heavily vibecoded.**
+
 # openvault
 
 `openvault` turns frontmatter-marked notes into a searchable project directory for [OpenCode V2](https://opencode.ai/v2/docs/).
