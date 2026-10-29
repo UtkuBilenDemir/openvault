@@ -1,0 +1,49 @@
+{
+  "name": "openvault",
+  "version": "0.1.0",
+  "description": "Turn frontmatter-marked notes into a searchable OpenCode project directory.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Utku Bilen Demir",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UtkuBilenDemir/openvault.git"
+  },
+  "homepage": "https://github.com/UtkuBilenDemir/openvault#readme",
+  "bugs": "https://github.com/UtkuBilenDemir/openvault/issues",
+  "keywords": [
+    "opencode",
+    "obsidian",
+    "frontmatter",
+    "projects",
+    "tui"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./tui": "./src/tui.ts",
+    "./rpc": "./src/rpc.ts"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "tsx --test test/**/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm test"
+  },
+  "dependencies": {
+    "@opencode/plugin": "^2.2.1",
+    "minimatch": "^10.1.1",
+    "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
