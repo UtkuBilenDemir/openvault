@@ -14,6 +14,7 @@ It is useful when a Markdown or Obsidian vault is the source of truth for projec
 - Discover projects from configurable YAML frontmatter.
 - Use the note's directory or an explicit relative/absolute project path.
 - Search projects by title, aliases, status, or directory.
+- Open the picker from a prewarmed in-memory index, with background refreshes.
 - Group projects by status.
 - Pin projects in frontmatter.
 - Change statuses from the OpenCode TUI.
@@ -92,6 +93,8 @@ Inside `/openvault`:
 - **Ctrl+S** changes its status.
 
 Pins and custom statuses are visible in `/openvault`. OpenCode's built-in `/open` picker does not expose plugin extension points for these fields.
+
+The project index is built when the plugin loads. After 30 seconds it is refreshed in the background the next time the picker opens, so opening `/openvault` does not wait for a full vault scan. Pin and status changes refresh the index immediately.
 
 ## Configuration
 
