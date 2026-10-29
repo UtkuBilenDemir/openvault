@@ -1,6 +1,6 @@
 {
   "name": "openvault",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Turn frontmatter-marked notes into a searchable OpenCode project directory.",
   "type": "module",
   "license": "MIT",
