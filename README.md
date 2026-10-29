@@ -115,7 +115,8 @@ The project index is built when the plugin loads. After 30 seconds it is refresh
           ".git/**",
           ".obsidian/**",
           ".trash/**",
-          "node_modules/**",
+          "**/.git/**",
+          "**/node_modules/**",
           "08_templates/**"
         ],
         "gitOnly": false,

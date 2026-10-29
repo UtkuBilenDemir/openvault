@@ -59,3 +59,14 @@ test("discovers ordinary directories by default", async () => {
   assert.equal(result.projects[0]?.title, "Notes")
   assert.equal(result.projects[0]?.git, false)
 })
+
+test("does not scan nested dependency directories", async () => {
+  const vault = await mkdtemp(path.join(os.tmpdir(), "openvault-"))
+  const dependency = path.join(vault, "app", "node_modules", "dependency")
+  await mkdir(dependency, { recursive: true })
+  await writeFile(path.join(dependency, "README.md"), "---\nkind: project\n---\n")
+
+  const result = await scanVault(resolveOptions({ vault }, vault))
+  assert.equal(result.scanned, 0)
+  assert.deepEqual(result.projects, [])
+})
