@@ -94,7 +94,7 @@ Inside `/openvault`:
 
 Pins and custom statuses are visible in `/openvault`. OpenCode's built-in `/open` picker does not expose plugin extension points for these fields.
 
-The project index is built when the plugin loads. After 30 seconds it is refreshed in the background the next time the picker opens, so opening `/openvault` does not wait for a full vault scan. Pin and status changes refresh the index immediately.
+The project index is built when the plugin loads and shared across OpenCode locations using the same configuration. After 30 seconds it is refreshed in the background the next time the picker opens, so opening `/openvault` does not wait for a full vault scan. Pin and status changes refresh the index immediately.
 
 ## Configuration
 
