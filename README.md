@@ -24,7 +24,7 @@ It is useful when a Markdown or Obsidian vault is the source of truth for projec
 
 - OpenCode V2.2.1 or later.
 - A local vault containing Markdown files with YAML frontmatter.
-- Git repositories by default. Set `gitOnly` to `false` to include ordinary directories.
+- Project directories may be Git repositories or ordinary directories. Set `gitOnly` to `true` to require Git repositories.
 
 ## Install from GitHub
 
@@ -115,7 +115,7 @@ Pins and custom statuses are visible in `/openvault`. OpenCode's built-in `/open
           "node_modules/**",
           "08_templates/**"
         ],
-        "gitOnly": true,
+        "gitOnly": false,
         "statusAsArray": true
       }
     }
@@ -133,7 +133,7 @@ Pins and custom statuses are visible in `/openvault`. OpenCode's built-in `/open
 | `pinProperty` | `openvault_pinned` | Boolean pin property. |
 | `statuses` | `open`, `active`, `detached`, `done` | Available statuses and their order. |
 | `exclude` | See example | Vault-relative glob patterns ignored during scanning. |
-| `gitOnly` | `true` | Require a `.git` file or directory at the resolved path. |
+| `gitOnly` | `false` | Require a `.git` file or directory at the resolved path when enabled. |
 | `statusAsArray` | `true` | Write newly created status properties as YAML lists. |
 
 ## Development

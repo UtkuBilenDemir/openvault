@@ -32,7 +32,7 @@ export function resolveOptions(input: Record<string, unknown>, fallbackVault: st
       "node_modules/**",
       "08_templates/**",
     ]),
-    gitOnly: bool(input.gitOnly, true),
+    gitOnly: bool(input.gitOnly, false),
     statusAsArray: bool(input.statusAsArray, true),
   }
 }

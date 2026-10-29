@@ -48,3 +48,14 @@ test("supports an explicit project directory", async () => {
   const result = await scanVault(resolveOptions({ vault }, vault))
   assert.equal(result.projects[0]?.directory, await realpath(repository))
 })
+
+test("discovers ordinary directories by default", async () => {
+  const vault = await mkdtemp(path.join(os.tmpdir(), "openvault-"))
+  const project = path.join(vault, "Notes")
+  await mkdir(project, { recursive: true })
+  await writeFile(path.join(project, "Notes.md"), "---\nkind: project\nstatus: open\n---\n")
+
+  const result = await scanVault(resolveOptions({ vault }, vault))
+  assert.equal(result.projects[0]?.title, "Notes")
+  assert.equal(result.projects[0]?.git, false)
+})
